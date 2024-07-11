@@ -9,8 +9,21 @@ import (
 
 // AnnagramCheker() takes two strings and returns true if they are anagram.
 func AnagramChecker(s1, s2 string) bool {
-	return true
-}
+	mapS1 := make(map[rune]int)
+	mapS2 := make(map[rune]int)
+
+	for _,v := range s1 {
+		mapS1[v] += 1
+	}
+	for _,v := range s1 {
+		mapS1[v] += 1
+	}
+	for k, v := range mapS1 {
+		if !(mapS2[k] == v) {
+			return false
+		}
+	}
+	return true}
 
 func main() {
 	if len(os.Args) != 3 {
