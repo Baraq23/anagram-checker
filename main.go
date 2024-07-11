@@ -6,16 +6,15 @@ import (
 	"strings"
 )
 
-
 // AnnagramCheker() takes two strings and returns true if they are anagram.
 func AnagramChecker(s1, s2 string) bool {
 	mapS1 := make(map[rune]int)
 	mapS2 := make(map[rune]int)
 
-	for _,v := range s1 {
+	for _, v := range s1 {
 		mapS1[v] += 1
 	}
-	for _,v := range s1 {
+	for _, v := range s1 {
 		mapS1[v] += 1
 	}
 	for k, v := range mapS1 {
@@ -23,7 +22,8 @@ func AnagramChecker(s1, s2 string) bool {
 			return false
 		}
 	}
-	return true}
+	return true
+}
 
 func main() {
 	if len(os.Args) != 3 {
@@ -33,8 +33,6 @@ func main() {
 
 	str1 := os.Args[1]
 	str2 := os.Args[2]
-
-	
 
 	if isStr := ValidateStr(str1, str2); isStr {
 		if str1 == str2 {
@@ -47,11 +45,9 @@ func main() {
 		} else {
 			fmt.Printf("%s is Not an anagram to %s\n", str1, str2)
 		}
-	}	
-	
+	}
 
 }
-
 
 // Function ValidateStr() takes two strings and check if they only consist of letters
 func ValidateStr(s1, s2 string) bool {
