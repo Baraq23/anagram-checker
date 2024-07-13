@@ -14,8 +14,11 @@ func AnagramChecker(s1, s2 string) bool {
 	for _, v := range s1 {
 		mapS1[v] += 1
 	}
-	for _, v := range s1 {
-		mapS1[v] += 1
+	for _, v := range s2 {
+		mapS2[v] += 1
+	}
+	if len(mapS1) != len(mapS2) {
+		return false
 	}
 	for k, v := range mapS1 {
 		if !(mapS2[k] == v) {
